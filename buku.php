@@ -1,11 +1,11 @@
-<h1 class="mt=4">Buku</h1>
+<h1 class="mt=4">Books</h1>
 
 <div class="card">
     <div class="card-body">
         <div class="row">
 
             <div class="col-mb-12">
-                <a href="?page=buku_tambah" class="btn btn-primary mb-3">+ Tambah Data</a>
+                <a href="?page=buku_tambah" class="btn btn-secondary mb-3">+</a>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>No</th>
@@ -31,8 +31,8 @@
                             <td><?php echo $data['tahun_terbit']; ?></td>
                             <td><?php echo $data['stok']; ?></td>
                             <td>
-                                <a href="?page=buku_ubah&&id=<?php echo $data['buku_id']; ?>" class="btn btn-warning">Edit</a>
-                                <a onclick="return confirm('Anda yakin ingin menghapus data ini?');" href="?page=buku_hapus&&id=<?php echo $data['buku_id']; ?>" class="btn btn-danger">Hapus</a>
+                                <a href="?page=buku_ubah&&id=<?php echo $data['buku_id']; ?>" class="btn btn-warning"><i class="fa fa-pen-to-square"></i></a>
+                                <a onclick="return confirm('Anda yakin ingin menghapus data ini?');" href="?page=buku_hapus&&id=<?php echo $data['buku_id']; ?>" class="btn btn-danger"><i class="fa fa-trash-can"></i></a>
 
                             </td>
                         </tr>

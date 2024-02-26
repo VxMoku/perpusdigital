@@ -1,4 +1,4 @@
-<h1 class="mt-4">Kategori Buku</h1>
+<h1 class="mt-4">Create Category</h1>
 <div class="card">
     <div class="card-body">
     <div class="row">
@@ -10,9 +10,9 @@
                         $query = mysqli_query($koneksi, "INSERT INTO kategori(kategori) values('$kategori')");
                         
                         if($query) {
-                            echo '<script>alert("Tambah data behasil!");</script>';
+                            echo '<script>alert("Penambahan data berhasil!");</script>';
                         }else{
-                            echo '<script>alert("Tambah data gagal!");</script>';
+                            echo '<script>alert("Penambahan data gagal!");</script>';
                         }
                     }
 
@@ -25,9 +25,8 @@
                 <div class="row">
                     <div class="col-mb-4"></div>
                     <div class="col-mb-8">
-                            <button type="submit" class="btn btn-primary" name="submit" value="submit">Save</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                            <a href="?page=kategori" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-success" name="submit" value="submit"><i class="fa fa-floppy-disk"></i></button>
+                            <a href="?page=kategori" class="btn btn-danger"><i class="fa fa-arrow-left"></i></a>
                     </div>
                 </div>
 

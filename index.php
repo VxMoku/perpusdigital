@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Perpustakaan Digital</title>
+        <title>Digital Library</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Perpustakaan Digital</a>
+            <a class="navbar-brand ps-3" href="index.html">Digital Library</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -30,7 +30,7 @@
                 </div>
             </form>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto ms-mb-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -46,39 +46,51 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menu</div>
                             <a class="nav-link" href="?">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-table-columns"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Navigasi</div>
+                            <div class="sb-sidenav-menu-heading">Pages</div>
                             <?php
                                 if($_SESSION['user']['level'] != 'peminjam'){
                             ?>
                             <a class="nav-link" href="?page=kategori">
                                 <div class="sb-nav-link-icon"><i class="fas fa-grip"></i></div>
-                                Kategori
+                                Category
                             </a>
                             <a class="nav-link" href="?page=buku">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Buku
+                                Book
                             </a>
                             <?php
                                 }
                             ?>
                             <a class="nav-link" href="?page=peminjaman">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
-                                Peminjaman
+                                Loan
                             </a>
                             <a class="nav-link" href="?page=ulasan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
-                                Ulasan
+                                Review
                             </a>
                             <?php
-                                if($_SESSION['user']['level'] != 'peminjam'){
+                            if($_SESSION['user']['level'] != 'peminjam'){
+                        ?>
+                            
+                        <a class="nav-link" href="?page=laporan">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
+                            Report
+                        </a>
+                            <?php
+                            }
                             ?>
-                            <a class="nav-link" href="?page=laporan">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Laporan
-                            </a>
+                        <div class="sb-sidenav-menu-heading"> User Pages</div>
+                        <?php
+                            if($_SESSION['user']['level'] != 'peminjam' && $_SESSION['user']['level'] != 'petugas'){
+                        ?>
+                        <a class="nav-link" href="?page=petugas">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
+                            Register
+                        </a>
                             <?php
                                 }
                             ?>
@@ -112,7 +124,7 @@
                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Perpustakaan Digital 2024</div>
+                            <div class="text-muted">Copyright &copy; Digital Library 2024</div>
                         </div>
                     </div>
                 </footer>

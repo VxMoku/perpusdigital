@@ -1,26 +1,8 @@
 <?php
-include "koneksi.php";
-
-// Proses registrasi
-if (isset($_POST['register'])) {
-    // Ambil data dari form registrasi
-    $nama = $_POST['nama'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $alamat = $_POST['alamat'];
-    $password = md5($_POST['password']);
-    $level = 'peminjam'; // Set level menjadi 'peminjam' secara default
-
-    // Query untuk menyimpan data pengguna ke database
-    $insert = mysqli_query($koneksi, "INSERT INTO user(nama, username, email, password, alamat, level) VALUES('$nama','$username','$email','$password','$alamat','$level')");
-    if ($insert) {
-        echo '<script>alert("Register Berhasil!"); location.href="login.php"</script>';
-    } else {
-        echo '<script>alert("Register Gagal!");</script>';
-    }
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,12 +12,12 @@ if (isset($_POST['register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Register</title>
+    <title>Admin Register</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-image: url('assets/img/bgperp3.jpg');background-position:center;background-repeat:no-repeat;background-size:cover;">
+<body class="loginS" style="background-image: url('assets/img/bgperp3.jpg');background-position:center;background-repeat:no-repeat;background-size:cover;">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -44,9 +26,26 @@ if (isset($_POST['register'])) {
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Register Digital Library</h3>
+                                    <h3 class="text-center font-weight-light my-4">Admin Register</h3>
                                 </div>
                                 <div class="card-body">
+                                    <?php
+                                    if (isset($_POST['register'])) {
+                                        $nama = $_POST['nama'];
+                                        $username = $_POST['username'];
+                                        $email = $_POST['email'];
+                                        $alamat = $_POST['alamat'];
+                                        $password = md5($_POST['password']);
+                                        $level = $_POST['level'];
+
+                                        $insert = mysqli_query($koneksi, "INSERT INTO user(nama, username, email, password, alamat , level) VALUES('$nama','$username','$email','$password','$alamat','$level')");
+                                        if ($insert) {
+                                            echo '<script>alert("Register Berhasil!"); location.href="index.php"</script>';
+                                        } else {
+                                            echo '<script>alert("Register Gagal!");</script>';
+                                        }
+                                    }
+                                    ?>
                                     <form method="post">
                                         <div class="form-group">
                                             <label class="small mb-1">Nama Lengkap</label>
@@ -65,20 +64,21 @@ if (isset($_POST['register'])) {
                                             <input class="form-control py-4" id="inputPassword" type="password" name="password" placeholder="Masukkan Password" />
                                         </div>
                                         <div class="form-group">
+                                            <label class="small mb-1">Level</label>
+                                            <select name="level" required class="form-control">
+                                                <option value="petugas">Petugas</option>
+                                                <option value="petugas">Peminjam</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="small mb-1">Alamat</label>
                                             <textarea name="alamat" rows="5" required class="form-control"> </textarea>
 
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-secondary" type="submit" name="register" value="register">Register</button>
-                                            <a class="btn btn-secondary" href="login.php">Login</a>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center py-3">
-                                    <div class="small">
-                                        &copy; Perpustakaan Digital 2024
-                                    </div>
                                 </div>
                             </div>
                         </div>
