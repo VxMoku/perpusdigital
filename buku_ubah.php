@@ -12,7 +12,8 @@
                         $penulis = $_POST['penulis'];
                         $penerbit = $_POST['penerbit'];
                         $tahun_terbit = $_POST['tahun_terbit'];
-                        $query = mysqli_query($koneksi, "UPDATE buku SET kategori_id='$kategori_id', judul='$judul', penulis='$judul', penerbit='$penerbit', tahun_terbit='$tahun_terbit' WHERE buku_id=$id");
+                        $stok = $_POST['stok'];
+                        $query = mysqli_query($koneksi, "UPDATE buku SET kategori_id='$kategori_id', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', stok='$stok' WHERE buku_id=$id");
 
                         if ($query) {
                             echo '<script>alert("ubah data behasil!");</script>';
@@ -56,6 +57,10 @@
                     <div class="row mb-3">
                         <div class="col-md-4">Tahun Terbit</div>
                         <div class="col-md-8"><input type="number" value="<?php echo $data['tahun_terbit']; ?>" class="form-control" name="tahun_terbit"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">Stok</div>
+                        <div class="col-md-8"><input type="number" value="<?php echo $data['stok']; ?>" class="form-control" name="stok"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-4"></div>

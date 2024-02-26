@@ -19,7 +19,7 @@
 
     
     
-    <body class="loginS" style="background-image: url('assets/img/bgperpus5.jpg');background-position:center;background-repeat:no-repeat;height:100px;background-size:cover;">
+    <body style="background-image: url('assets/img/bgperpus5.jpg');background-position:center;background-repeat:no-repeat;height:100px;background-size:cover;">
     
 
         
