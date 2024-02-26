@@ -1,4 +1,4 @@
-<h1 class="mt-4">Buku</h1>
+<h1 class="mt-4">Create Book</h1>
 <div class="card">
     <div class="card-body">
         <div class="row">
@@ -16,9 +16,9 @@
                         $query = mysqli_query($koneksi, "INSERT INTO buku(kategori_id,judul,penulis,penerbit,tahun_terbit,stok) values ('$kategori_id','$judul','$penulis','$penerbit','$tahun_terbit','$stok')");
                     
                         if ($query) {
-                            echo '<script>alert("Tambah data berhasil!");</script>';
+                            echo '<script>alert("Penambahan data berhasil!");</script>';
                         } else {
-                            echo '<script>alert("Tambah data gagal!");</script>';
+                            echo '<script>alert("Penambahan data gagal!");</script>';
                         }
                     }
                     ?>
@@ -60,9 +60,8 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary" name="submit" value="submit">Save</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                            <a href="?page=buku" class="btn btn-danger">Return</a>
+                            <button type="submit" class="btn btn-success" name="submit" value="submit"><i class="fa fa-floppy-disk"></i></button>
+                            <a href="?page=buku" class="btn btn-danger"><i class="fa fa-arrow-left"></i></a>
                         </div>
                     </div>
 

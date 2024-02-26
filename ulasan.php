@@ -1,11 +1,11 @@
-<h1 class="mt=4">Ulasan Buku</h1>
+<h1 class="mt=4">Reviews</h1>
 
 <div class="card">
     <div class="card-body">
         <div class="row">
 
             <div class="col-mb-12">
-                <a href="?page=ulasan_tambah" class="btn btn-primary mb-3">+ Tambah Data</a>
+                <a href="?page=ulasan_tambah" class="btn btn-secondary mb-3">+</a>
 
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
@@ -28,8 +28,8 @@
                             <td><?php echo $data['ulasan']; ?></td>
                             <td><?php echo $data['rating']; ?></td>
                             <td>
-                                <a href="?page=ulasan_ubah&&id=<?php echo $data['ulasan_id']; ?>" class="btn btn-warning">Edit</a>
-                                <a onclick="return confirm('Anda yakin ingin menghapus data ini?');" href="?page=ulasan_hapus&&id=<?php echo $data['ulasan_id']; ?>" class="btn btn-danger">Hapus</a>
+                                <a href="?page=ulasan_ubah&&id=<?php echo $data['ulasan_id']; ?>" class="btn btn-warning"><i class="fa fa-pen-to-square"></i></a>
+                                <a onclick="return confirm('Anda yakin ingin menghapus data ini?');" href="?page=ulasan_hapus&&id=<?php echo $data['ulasan_id']; ?>" class="btn btn-danger"><i class="fa fa-trash-can"></i></a>
 
                             </td>
                         </tr>

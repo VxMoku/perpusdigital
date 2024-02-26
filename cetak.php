@@ -1,4 +1,4 @@
-<h2 align="center">Laaporan peminjaman buku</h2>
+<h2 align="center">Book loan report</h2>
 <table border="1" cellpedding="0" cellspacing="0" width="100%">
     <tr>
         <th>No</th>

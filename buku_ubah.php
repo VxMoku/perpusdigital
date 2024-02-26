@@ -1,4 +1,4 @@
-<h1 class="mt-4">Buku</h1>
+<h1 class="mt-4">Edit Book</h1>
 <div class="card">
     <div class="card-body">
         <div class="row">
@@ -16,9 +16,9 @@
                         $query = mysqli_query($koneksi, "UPDATE buku SET kategori_id='$kategori_id', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', stok='$stok' WHERE buku_id=$id");
 
                         if ($query) {
-                            echo '<script>alert("ubah data behasil!");</script>';
+                            echo '<script>alert("Pengubahan data behasil!");</script>';
                         } else {
-                            echo '<script>alert("ubah data gagal!");</script>';
+                            echo '<script>alert("Pengubahan data gagal!");</script>';
                         }
                     }
                     $query = mysqli_query($koneksi, "SELECT*FROM buku WHERE buku_id=$id");
@@ -65,9 +65,8 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary" name="submit" value="submit">Save</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                            <a href="?page=buku" class="btn btn-danger">Return</a>
+                            <button type="submit" class="btn btn-success" name="submit" value="submit"><i class="fa fa-floppy-disk"></i></button>
+                            <a href="?page=buku" class="btn btn-danger"><i class="fa fa-arrow-left"></i></a>
                         </div>
                     </div>
 

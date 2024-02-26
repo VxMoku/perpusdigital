@@ -1,11 +1,11 @@
-<h1 class="mt=4">Laporan Peminjaman Buku</h1>
+<h1 class="mt=4">Generate Reports</h1>
 
 <div class="card">
     <div class="card-body">
         <div class="row">
 
             <div class="col-mb-12">
-                <a href="cetak.php" target="_blank" class="btn btn-primary mb-3"><i class="fa fa-print"></i> Cetak</a>
+                <a href="cetak.php" target="_blank" class="btn btn-secondary mb-3"><i class="fa fa-print"></i></a>
 
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
